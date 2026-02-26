@@ -1,0 +1,105 @@
+labels:
+  - name: blocked
+    description: This label marks tasks that are blocked by dependencies, missing resources, or issues.
+    color: 'FF0004'
+    ignore: false
+
+  - name: build
+    description: This label marks tasks that affect build system, dependencies, or tooling.
+    color: '027EE6'
+    ignore: false
+
+  - name: chore
+    description: This label marks routine tasks, maintenance, or non-functional changes.
+    color: '83D09B'
+    ignore: false
+
+  - name: ci
+    description: This label marks tasks that modify continuous integration configuration.
+    color: '006CCB'
+    ignore: false
+
+  - name: dependencies
+    description: This label marks pull requests with dependency updates from Dependabot.
+    color: '0366D6'
+    ignore: false
+
+  - name: docs
+    description: This label marks tasks to update, improve, or extend project documentation.
+    color: 'E4DA8A'
+    ignore: false
+
+  - name: feat
+    description: This label marks tasks for developing or adding new functionality to the project.
+    color: '154C79'
+    ignore: false
+
+  - name: feature
+    description: This label marks tasks for developing or adding new functionality to the project.
+    color: '154C79'
+    ignore: false
+
+  - name: fix
+    description: This label marks tasks that fix issues or bugs in the code.
+    color: 'BC0003'
+    ignore: false
+
+  - name: large
+    description: Marks large pull requests (≤ 2000 lines changed).
+    color: 'F66A0A'
+    ignore: false
+
+  - name: medium
+    description: Marks medium-sized pull requests (≤ 500 lines changed).
+    color: 'F5C518'
+    ignore: false
+
+  - name: migration
+    description: This label marks tasks involving data migration, upgrades, or system changes.
+    color: '996633'
+    ignore: false
+
+  - name: needs clarification
+    description: This label marks tasks that need more information or further discussion.
+    color: '1F6DAD'
+    ignore: false
+
+  - name: oh lawd he comin
+    description: Marks oversized pull requests (> 2000 lines changed). Such PRs should be split if possible.
+    color: 'D73A4A'
+    ignore: false
+
+  - name: perf
+    description: This label marks tasks that improve performance or efficiency.
+    color: '4D19D5'
+    ignore: false
+
+  - name: refactor
+    description: This label marks tasks to improve or restructure code without changing behavior.
+    color: '3C94DD'
+    ignore: false
+
+  - name: revert
+    description: This label marks commits that revert previous changes.
+    color: 'BAE820'
+    ignore: false
+
+  - name: small
+    description: Marks small pull requests (≤ 100 lines changed).
+    color: '36B37E'
+    ignore: false
+
+  - name: style
+    description: This label marks tasks that affect code formatting or style, not logic.
+    color: '4C7E2A'
+    ignore: false
+
+  - name: teeny
+    description: Marks very small pull requests (≤ 10 lines changed).
+    color: 'B7EB8F'
+    ignore: false
+
+  - name: test
+    description: This label marks tasks related to writing or improving tests.
+    color: '86A372'
+    ignore: false

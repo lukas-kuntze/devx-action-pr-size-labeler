@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+conventional_commit_regex="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z0-9_\-]+\))?!?: .+$"
+
+commit_message_file="$1"
+if [[ -z "$commit_message_file" || ! -f "$commit_message_file" ]]; then
+    printf "\e[31mError: Commit message file not provided or does not exist.\e[0m\n"
+    exit 1
+fi
+
+commit_message=$(cat "$commit_message_file")
+if [[ -z "$commit_message" ]]; then
+    printf "\e[31mError: Commit message is empty. Aborting.\e[0m\n"
+    exit 1
+fi
+
+if [[ "$commit_message" =~ $conventional_commit_regex ]]; then
+    printf "\e[32mCommit message meets Conventional Commit standards.\e[0m\n"
+    exit 0
+fi
+
+printf "\e[31mThe commit message does not meet the Conventional Commit standard.\e[0m\n"
+echo "Attempted commit message:"
+echo "  ${commit_message}"
+echo
+echo "Example of a valid message:"
+echo "  feat(login): ABC-123 add the 'remember me' button"
+echo "More details: https://www.conventionalcommits.org/en/v1.0.0/#summary"
+exit 1
