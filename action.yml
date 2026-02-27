@@ -1,0 +1,23 @@
+name: 'Pull Request Size Labeler'
+description: 'A GitHub Action that automatically applies size-based labels to pull requests based on change metrics. It helps teams improve review efficiency, prioritize work effectively, and maintain a consistent developer workflow.'
+author: 'Lukas Kuntze'
+
+branding:
+  icon: 'git-pull-request'
+  color: 'orange'
+
+inputs:
+  github_api_url:
+    description: 'Base URL of the GitHub API (used for GitHub Enterprise Server).'
+    default: 'https://api.github.com'
+    required: false
+
+  github_token:
+    description: 'GitHub token used for authenticating API requests.'
+    required: true
+
+outputs:
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

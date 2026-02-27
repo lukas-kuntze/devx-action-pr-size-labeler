@@ -7,11 +7,29 @@ A GitHub Action that automatically applies size-based labels to pull requests ba
 ## Table of Contents
 
 - [Features](#features)
+- [Usage](#usage)
+  - [Basic Setup](#basic-setup)
+- [How It Works](#how-it-works)
+- [Requirements](#requirements)
 - [Additional Resources](#additional-resources)
 
 ---
 
 ## Features
+
+---
+
+## Usage
+
+### Basic Setup
+
+---
+
+## How It Works
+
+---
+
+## Requirements
 
 ---
 
