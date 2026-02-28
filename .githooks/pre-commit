@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Pre-commit hook: Format and lint code before committing
+
+printf "\e[34mRunning pre-commit checks...\e[0m\n"
+
+printf "Formatting code...\n"
+if ! npm run format --silent; then
+    printf "\e[31mError: Formatting failed. Please fix the issues and try again.\e[0m\n"
+    exit 1
+fi
+
+printf "Linting code...\n"
+if ! npm run lint --silent; then
+    printf "\e[31mError: Linting failed. Please fix the issues and try again.\e[0m\n"
+    exit 1
+fi
+
+printf "\e[32mPre-commit checks passed.\e[0m\n"
+exit 0

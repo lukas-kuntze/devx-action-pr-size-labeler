@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Pre-push hook: Build and package the action before pushing
+
+printf "\e[34mRunning pre-push checks...\e[0m\n"
+
+printf "Building TypeScript...\n"
+if ! npm run build --silent; then
+    printf "\e[31mError: Build failed. Please fix the issues and try again.\e[0m\n"
+    exit 1
+fi
+
+printf "Packaging action...\n"
+if ! npm run package --silent; then
+    printf "\e[31mError: Packaging failed. Please fix the issues and try again.\e[0m\n"
+    exit 1
+fi
+
+if ! git diff --quiet dist/; then
+    printf "\e[33mWarning: dist/ has been updated. Please stage and commit these changes.\e[0m\n"
+    git status dist/
+    exit 1
+fi
+
+printf "\e[32mPre-push checks passed.\e[0m\n"
+exit 0

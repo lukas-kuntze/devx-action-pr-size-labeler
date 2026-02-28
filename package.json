@@ -1,0 +1,53 @@
+{
+  "name": "pr-size-labeler",
+  "version": "1.0.0",
+  "description": "Automatically applies size labels to pull requests based on the total number of lines changed.",
+  "author": "Lukas Kuntze",
+  "license": "MIT",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukas-kuntze/devx-action-pr-size-labeler.git"
+  },
+
+  "keywords": [
+    "automation",
+    "developer-experience",
+    "github-actions",
+    "labeling",
+    "pr-labeler",
+    "pull-request"
+  ],
+
+  "main": "dist/index.js",
+
+  "engines": {
+    "node": ">=20.0.0"
+  },
+
+  "scripts": {
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint src/**/*.ts",
+    "build": "tsc",
+    "package": "ncc build src/action.ts -o dist --source-map --license licenses.txt",
+    "all": "npm run format && npm run lint && npm run build && npm run package"
+  },
+
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "js-yaml": "^4.1.0",
+    "minimatch": "^9.0.3"
+  },
+
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.2"
+  }
+}
