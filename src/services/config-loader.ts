@@ -75,10 +75,15 @@ async function loadFromGitHub(repoPath: string, token: string): Promise<SizeLabe
     core.debug(`Owner: ${owner}, Repo: ${repo}, Path: ${path}`);
 
     const octokit = getOctokit(token);
+    const pullRequest = context.payload.pull_request as { head?: { sha?: string } } | undefined;
+    const ref = pullRequest?.head?.sha || context.sha;
+    core.debug(`Using ref: ${ref}`);
+
     const { data } = await octokit.rest.repos.getContent({
       owner,
       repo,
-      path
+      path,
+      ref
     });
 
     if (Array.isArray(data) || data.type !== 'file') {

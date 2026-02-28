@@ -98,10 +98,14 @@ async function loadFromGitHub(repoPath, token) {
         const path = parts.slice(2).join('/');
         core.debug(`Owner: ${owner}, Repo: ${repo}, Path: ${path}`);
         const octokit = (0, github_1.getOctokit)(token);
+        const pullRequest = github_1.context.payload.pull_request;
+        const ref = pullRequest?.head?.sha || github_1.context.sha;
+        core.debug(`Using ref: ${ref}`);
         const { data } = await octokit.rest.repos.getContent({
             owner,
             repo,
-            path
+            path,
+            ref
         });
         if (Array.isArray(data) || data.type !== 'file') {
             throw new Error(`Path "${path}" is not a file`);
