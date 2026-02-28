@@ -1,5 +1,5 @@
 name: 'Pull Request Size Labeler'
-description: 'A GitHub Action that automatically applies size-based labels to pull requests based on change metrics.'
+description: 'Automatically applies size labels to pull requests based on the total number of lines changed.'
 author: 'Lukas Kuntze'
 
 branding:

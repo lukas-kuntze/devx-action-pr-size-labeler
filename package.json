@@ -1,7 +1,7 @@
 {
   "name": "pr-size-labeler",
   "version": "1.0.0",
-  "description": "A GitHub Action that automatically applies size-based labels to pull requests based on change metrics.",
+  "description": "Automatically applies size labels to pull requests based on the total number of lines changed.",
   "author": "Lukas Kuntze",
   "license": "MIT",
 
@@ -35,7 +35,8 @@
 
   "dependencies": {
     "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0"
+    "@actions/github": "^6.0.0",
+    "minimatch": "^9.0.3"
   },
 
   "devDependencies": {
