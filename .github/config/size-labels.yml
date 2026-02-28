@@ -1,0 +1,18 @@
+labels:
+  - name: teeny
+    max_lines: 10
+
+  - name: small
+    max_lines: 100
+
+  - name: medium
+    max_lines: 500
+
+  - name: large
+    max_lines: 2000
+
+  - name: oh lawd he comin
+    message: |
+      This PR exceeds the recommended size of 2000 lines.
+      Please make sure you are NOT addressing multiple issues with one PR.
+      Note this PR might be rejected due to its size.

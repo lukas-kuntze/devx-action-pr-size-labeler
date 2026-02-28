@@ -7,14 +7,47 @@ branding:
   color: 'orange'
 
 inputs:
-  github_api_url:
-    description: 'Base URL of the GitHub API (used for GitHub Enterprise Server).'
-    default: 'https://api.github.com'
+  config_file:
+    description: 'Path to the YAML configuration file containing size label definitions.'
+    default: '.github/config/size-labels.yml'
+    required: false
+
+  files_to_ignore:
+    description: 'Glob patterns to exclude from the calculation (one pattern per line).'
+    default: ''
     required: false
 
   github_token:
     description: 'GitHub token used for authenticating API requests.'
     required: true
+
+  github_api_url:
+    description: 'Base URL of the GitHub API (used for GitHub Enterprise Server).'
+    default: 'https://api.github.com'
+    required: false
+
+  ignore_file_deletions:
+    description: 'If true, fully deleted files are not counted.'
+    default: 'false'
+    required: false
+
+  ignore_line_deletions:
+    description: 'If true, deleted lines are not counted.'
+    default: 'false'
+    required: false
+
+outputs:
+  label:
+    description: 'The size label that was applied to the pull request.'
+
+  lines_added:
+    description: 'Total number of lines added in the pull request.'
+
+  lines_deleted:
+    description: 'Total number of lines deleted in the pull request.'
+
+  total_lines:
+    description: 'Total number of lines changed in the pull request.'
 
 runs:
   using: 'node20'
