@@ -1,5 +1,5 @@
 name: 'Pull Request Size Labeler'
-description: 'A GitHub Action that automatically applies size-based labels to pull requests based on change metrics. It helps teams improve review efficiency, prioritize work effectively, and maintain a consistent developer workflow.'
+description: 'A GitHub Action that automatically applies size-based labels to pull requests based on change metrics.'
 author: 'Lukas Kuntze'
 
 branding:
@@ -15,8 +15,6 @@ inputs:
   github_token:
     description: 'GitHub token used for authenticating API requests.'
     required: true
-
-outputs:
 
 runs:
   using: 'node20'
